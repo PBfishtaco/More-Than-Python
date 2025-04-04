@@ -13,6 +13,7 @@ while True:
             print("err\n")
         else:
             break
+    if letters == "":
         exit()
     else:
         print("word:", letters, sep="")
