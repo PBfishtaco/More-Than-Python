@@ -1,3 +1,4 @@
+import pyperclip
 kill = False
 while True:
     while True:
@@ -15,10 +16,14 @@ while True:
             break
     if letters == "":
         exit()
-    else:
-        print("word:", letters, sep="")
     letters = list(letters)
     for i in range(len(letters)):
         letters[i] = chr(ord(letters[i]) + number)
-    print("".join(letters))
+    letters = "".join(letters)
+    print(letters)
+    try:
+        if input("Copy to clipboard?: ")[0].lower() == "y":
+            pyperclip.copy(letters)
+    except:
+        pass
     print("")
